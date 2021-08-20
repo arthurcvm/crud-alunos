@@ -7,7 +7,7 @@ export default class Alunos extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('matricula', 10).unique().notNullable()
+      table.string('matricula', 10).unique().index().notNullable()
       table.string('nome', 200).notNullable()
       table.enu('sexo', Object.values(SexoEnum)).notNullable()
       table.integer('idade').notNullable()
